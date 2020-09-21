@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30413.136
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchoolApi", "SchoolApi\SchoolApi.csproj", "{5AEA1202-61CA-4E75-B74C-6D0BFF04A7D6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SchoolApi", "SchoolApi\SchoolApi.csproj", "{5AEA1202-61CA-4E75-B74C-6D0BFF04A7D6}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SubstitutionService", "SubstitutionService\SubstitutionService.csproj", "{9ED729E8-0F89-44F0-B6AF-4EFE3C4C5F6C}"
 EndProject

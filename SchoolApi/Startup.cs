@@ -38,7 +38,7 @@ namespace SchoolApi
                 app.UseDeveloperExceptionPage();
             }
 
-            //app.UseHttpsRedirection();
+            app.UseHttpsRedirection();
 
             app.UseCors(builder =>
             {
