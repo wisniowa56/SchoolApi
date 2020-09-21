@@ -12,6 +12,11 @@ namespace SubstitutionService
 {
     public class SubstitutionManager
     {
+        public SubstitutionManager()
+        {
+            Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
+        }
+
         // Set the website URI
         private readonly Uri _website = new Uri("http://zastepstwa.staff.edu.pl/");
         //x private readonly Uri _website = new Uri("http://localhost:8000/zast.html");
@@ -29,7 +34,7 @@ namespace SubstitutionService
             var browser = new ScrapingBrowser
             {
                 // Tell browser to use ISO-8859-2 (Central European (ISO)) encoding
-                Encoding = CodePagesEncodingProvider.Instance.GetEncoding("ISO-8859-2")
+                Encoding = Encoding.GetEncoding("ISO-8859-2")
             };
 
             // Go to page
@@ -176,8 +181,8 @@ namespace SubstitutionService
             var json = JsonConvert.SerializeObject(subs);
 
             // Change encoding from ISO-8859-2 to UTF-8 (like normal people do, duh)
-            var bytesJson = CodePagesEncodingProvider.Instance.GetEncoding("ISO-8859-2").GetBytes(json);
-            var utfJsonBytes = Encoding.Convert(CodePagesEncodingProvider.Instance.GetEncoding("ISO-8859-2"), Encoding.UTF8, bytesJson);
+            var bytesJson = Encoding.GetEncoding("ISO-8859-2").GetBytes(json);
+            var utfJsonBytes = Encoding.Convert(Encoding.GetEncoding("ISO-8859-2"), Encoding.UTF8, bytesJson);
             var utfJson = Encoding.UTF8.GetString(utfJsonBytes);
 
             // Convert string back into dictionary
