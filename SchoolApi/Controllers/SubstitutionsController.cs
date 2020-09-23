@@ -62,7 +62,7 @@ namespace SchoolApi.Controllers
             {
                 foreach (var cKvp in kvp.Value)
                 {
-                    cKvp.Value.OrderBy(x => x.Number);
+                    cKvp.Value.Sort();
                 }
             }
 

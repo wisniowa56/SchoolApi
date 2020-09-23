@@ -1,8 +1,10 @@
 ﻿using SubstitutionService.Models;
+using System;
+using System.Diagnostics.CodeAnalysis;
 
 namespace SchoolApi.Models
 {
-    public class ClassSubstitution
+    public class ClassSubstitution : IComparable<ClassSubstitution>
     {
         public ClassSubstitution()
         {
@@ -23,5 +25,10 @@ namespace SchoolApi.Models
         public string Teacher { get; set; }
         public string Substitute { get; set; }
         public string Comment { get; set; }
+
+        public int CompareTo(ClassSubstitution other)
+        {
+            return Number.CompareTo(other.Number);
+        }
     }
 }
